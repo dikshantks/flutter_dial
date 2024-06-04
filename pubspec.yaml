@@ -1,6 +1,6 @@
 name: flutter_number_dial
-description: "A new Flutter package project."
-version: 0.0.1
+description: "Flutter Rotational Num Dial"
+version: 1.0.0
 homepage: https://github.com/dikshantks/flutter_dial
 
 environment:
