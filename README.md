@@ -9,6 +9,18 @@ A customizable rotary dial input widget for Flutter, allowing users to select nu
 -   Easy integration with other widgets through a `DialConfigProvider`.
 -   Supports gesture detection for rotating the dial and selecting numbers.
 
+## Demo
+
+Here are some animated GIFs showcasing the `RotationDialInput` widget in action:
+
+**Basic Usage:**
+
+![Basic Usage Demo](pub_screenshots/demo1.gif)
+
+**Customization:**
+
+![Customization Demo](./pub_screenshots/demo2.gif)
+
 ## Getting Started
 
 ### Prerequisites
@@ -70,25 +82,7 @@ class DialExample extends StatefulWidget {
   _DialExampleState createState() => _DialExampleState();
 }
 
-class _DialExampleState extends State<DialExample>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController modeChangeController;
-  bool isAnimating = false;
-
-  @override
-  void initState() {
-    super.initState();
-    modeChangeController = AnimationController(
-      duration: const Duration(seconds: 1),
-      vsync: this,
-    )..addListener(() => setState(() {}));
-  }
-
-  @override
-  void dispose() {
-    modeChangeController.dispose();
-    super.dispose();
-  }
+class _DialExampleState extends State<DialExample> {
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +94,6 @@ class _DialExampleState extends State<DialExample>
             fontWeight: FontWeight.w600,
             fontSize: 20.0,
           ),
-      passcodeAnimationInProgress: isAnimating,
       animationDuration: const Duration(seconds: 1),
       onNumSelected: (currentnum) {
         num = num * 10 + currentnum;
